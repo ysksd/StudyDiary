@@ -1,0 +1,574 @@
+@charset "utf-8";
+/* ======================
+レイアウト
+====================== */
+main {
+    padding-top: 130px;
+    padding-bottom: 50px;
+}
+
+.site-width{
+    width: 980px;
+    margin: 0 auto;
+}
+
+section {
+    padding-top: 130px;
+    padding-bottom: 50px;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    color: #33cccc;
+}
+
+/* ======================
+ヘッダー
+====================== */
+#header {
+    background: #33cccc;;
+    color: white;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header-flex {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav,#pc-nav {
+    display: flex;
+}
+
+#nav > li > a {
+    margin-right: 15px;
+    color: white;
+}
+
+#nav > li:last-child {
+    margin-right: 0;
+}
+
+#nav > li > a:hover {
+    border-bottom: 1px solid white;
+}
+
+#pc-nav > li > a {
+    margin-right: 15px;
+    color: white;
+}
+
+#pc-nav > li:last-child {
+    margin-right: 0;
+}
+
+#pc-nav > li > a:hover {
+    border-bottom: 1px solid white;
+}
+
+#sp-nav {
+    display: none;
+}
+
+
+/* ======================
+トップページ
+====================== */
+.toppage-title {
+    text-align: center;
+}
+
+.toppage-title > h1 {
+    font-size: 80px;
+    color: #33cccc;
+}
+
+.toppage-title > p {
+    font-size: 15px;
+    color: #ff9900;
+}
+
+.toppage-title > h2 {
+    font-size: 30px;
+    margin-top: 150px;
+    color: #33cccc;
+}
+
+.toppage-flex {
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.toppage-flex > h3 {
+    background: #ff9900;
+    padding: 10px 20px;
+}
+
+
+/*=======================
+モーダル
+====================== */
+#modal {
+    background: white;
+    display: none;
+    position: fixed;
+    top: 18%;
+    left: 30%;
+    z-index: 2;
+}
+
+#signup-modal {
+    background: white;
+    display: none;
+    position: fixed;
+    top: 18%;
+    left: 30%;
+    z-index: 2;
+}
+
+#m-close, #s-close {
+    font-size: 35px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+/* ======================
+マイページ
+====================== */
+.content-wrapper {
+    display: flex;
+    padding: 20px;
+}
+
+.content-title {
+    margin-bottom: 10px;
+    color: #33cccc;
+}
+
+.diary {
+    width: 60%;
+}
+
+.product > a {
+    border: 1px solid #33cccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product > a:hover {
+    opacity: 0.5;
+}
+
+.panel-thum {
+    margin-right: 15px;
+    width: 5%;
+}
+
+.panel-text {
+    width: 60%;
+    display : -webkit-box;
+    -webkit-box-orient : vertical;
+    -webkit-line-clamp : 2;
+    overflow : hidden;
+}
+
+.panel-text > h3 {
+    color: black;
+}
+
+.panel-text > p {
+    color: #c0c0c0;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.list-item > a {
+    font-size: 20px;
+    padding: 5px 15px;
+    border: 1px solid #33cccc;;
+    color: #33cccc;;
+}
+
+.list-item > a:hover {
+    background: #33cccc;;
+    color: white;
+}
+
+/* ======================
+投稿画面
+====================== */
+.icon-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.active {
+    color: #fe8a8b;
+}
+
+/* ======================
+サイドバー
+====================== */
+.sidevar {
+    width: 50%;
+}
+
+.select-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-area, input[type="submit"] {
+    text-align: center;
+}
+
+/* ======================
+フォーム
+====================== */
+form {
+    margin: 0 auto;
+    width: 400px;
+}
+
+label {
+    display: block;
+}
+
+input[type="text"], input[type="password"], input[type="date"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    resize: none;
+}
+
+.form-container {
+    border: 5px solid #f1f1f1;
+    padding: 30px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+input[type="submit"] {
+    font-size: 15px;
+    padding: 20px 30px;
+    background: #33cccc;;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.5;
+}
+
+.area-drop{
+    margin-bottom: 15px;
+    width: 60%;
+    background: #f6f5f4;
+    color: #ccc;
+    text-align: center;
+    line-height: 150px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+.input-file{
+    opacity:0;
+    width:100%;
+    height:140px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+  }
+
+.prev-img{
+    width:100%;
+    height: auto;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+/* ======================
+エラー
+====================== */
+.msg-area {
+    color: #fe8a8b;;
+}
+
+/* ======================
+フッター
+====================== */
+#footer {
+    background: #33cccc;;
+    height: 80px;
+}
+
+#footer p {
+    line-height: 80px;
+    color: white;
+    text-align: center;
+}
+
+/* ======================
+アイコン
+====================== */
+.diary-icon {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.search {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+#js-click-like {
+    font-size: 35px;
+}
+
+#js-click-delete {
+    font-size: 35px;
+}
+
+/* ======================
+その他
+====================== */
+#slide-msg {
+    background: white;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    z-index: 2;
+}
+
+/* ======================
+レスポンシブ
+====================== */
+@media screen and (max-width:425px) {
+/*========================
+レイアウト
+======================= */
+    .site-width {
+        width: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    /* 改行 */
+    .br-pc {
+        display: none;
+      }
+    
+      .br-sp {
+        display: block;
+      }
+/* ========================
+トップページ
+======================== */
+.toppage-title > h1 {
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.toppage-title > h2 {
+    margin-top: 30px;
+}
+
+.toppage-flex {
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.toppage-flex > h3 {
+    padding: 5px 10px;
+}
+
+/* ========================
+モーダル
+======================== */
+
+#modal {
+    background: white;
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    z-index: 2;
+}
+
+#signup-modal {
+    background: white;
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    z-index: 2;
+}
+
+#m-close, #s-close {
+    font-size: 35px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+/* ======================
+ナビ
+====================== */
+#pc-nav {
+    display: none;
+}
+
+#sp-nav {
+    display: block;
+    position: relative;
+    top: 0;
+}
+
+.ac-icon {
+    border: 1px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ac-list {
+    display: none;
+    background: #33cccc
+}
+
+.ac-list > li {
+    padding: 5px 0;
+}
+
+.ac-list > li > a {
+    color: white;
+    padding: 10px 0;
+}
+
+.ac-list > li > a:hover{ 
+    opacity: 0.5;
+}
+
+.ac-active {
+    display: block;
+    width: 100px;
+    position: absolute;
+    top: 30;
+    right: 10;
+}
+
+/* ======================
+マイページ
+====================== */
+.content-wrapper {
+    display: block;
+}
+
+.diary {
+    width: 100%;
+}
+
+.panel-thum {
+    margin-right: 15px;
+    width: 30%;
+}
+
+.panel-text {
+    width: 60%;
+    display : -webkit-box;
+    -webkit-box-orient : vertical;
+    -webkit-line-clamp : 3;
+    overflow : hidden;
+}
+
+.panel-text > h3 {
+    font-size: 16px;
+}
+
+.panel-text > p {
+    display: none;
+}
+
+/* ======================
+サイドバー
+====================== */
+#sidevar {
+    display: none;
+}
+
+/* ======================
+フォーム
+====================== */
+
+form {
+    margin: 0 auto;
+    width: 280px;
+}
+
+.form-container {
+    border: 5px solid #f1f1f1;
+    padding: 30px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+input[type="submit"] {
+    font-size: 15px;
+    padding: 20px 30px;
+    background: #33cccc;;
+    color: white;
+}
+
+.area-drop{
+    margin-bottom: 15px;
+    width: 100%;
+    background: #f6f5f4;
+    color: #ccc;
+    text-align: center;
+    line-height: 150px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+.input-file{
+    opacity:0;
+    width:100%;
+    height: 50px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+  }
+
+
+}
