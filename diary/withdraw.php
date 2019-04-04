@@ -46,12 +46,11 @@ debag('退会処理終了<<<<<<<<<<<<<<<<<<<<<<');
         <div class="title">
             <h1>退会</h1>
         </div>
-        <p>退会をご希望される場合は退会ボタンを押してください。</p>
         <form method="post" action="">
             <div class="msg-area">
                 <?php if(!empty($err_msg['common'])) echo $err_msg['common']; ?>
             </div>
-            <input type="submit" value="退会する">
+            <input type="submit" value="退会する" class="withdraw">
         </form>
     </div>
 </section>

@@ -137,7 +137,7 @@ debag('画面処理終了<<<<<<<<<<<<<<<<<<<<<<<');
             <div class="msg-area">
                 <?php if(!empty($err_msg['comment'])) echo $err_msg['comment']; ?>
             </div>
-            <p><span class="counter">0</span>/400</p>
+            <p class="text-count"><span class="counter">0</span>/400</p>
             <div class="img-drop">
                 <label class="area-drop">画像
                     <input type="hidden" name="MAX_FILE_SIZE" value="3145728">

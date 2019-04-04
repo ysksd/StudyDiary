@@ -174,7 +174,7 @@ section {
 
 .panel-thum {
     margin-right: 15px;
-    width: 5%;
+    width: 30%;
 }
 
 .panel-text {
@@ -221,6 +221,10 @@ section {
     color: #fe8a8b;
 }
 
+.text-count {
+    text-align: left;
+}
+
 /* ======================
 サイドバー
 ====================== */
@@ -233,19 +237,17 @@ section {
     margin-bottom: 20px;
 }
 
-.search-area, input[type="submit"] {
-    text-align: center;
-}
-
 /* ======================
 フォーム
 ====================== */
 form {
+    text-align: center;
     margin: 0 auto;
     width: 400px;
 }
 
 label {
+    text-align: left;
     display: block;
 }
 
@@ -284,6 +286,11 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     opacity: 0.5;
+}
+
+.withdraw {
+    margin-top: 30px;
+    text-align: center;
 }
 
 .area-drop{
@@ -496,11 +503,6 @@ input[type="submit"]:hover {
 
 .diary {
     width: 100%;
-}
-
-.panel-thum {
-    margin-right: 15px;
-    width: 30%;
 }
 
 .panel-text {

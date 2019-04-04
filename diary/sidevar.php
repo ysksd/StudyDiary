@@ -13,9 +13,6 @@
                 <?php } ?>
             </select>
         </div>
-        <div class="title">
-            <h3 class="content-title">お気に入り</h3>
-        </div>
         <input type="submit" value="検索">
     </form>
 </div>
