@@ -1,0 +1,72 @@
+@charset "utf-8";
+body{
+    margin: 0 auto;
+    padding: 30px;
+    width: 25%;
+    background: #fbfbfa;
+}
+h1{ text-align: center;}
+h2{ color: white; font-size: 16px; text-align: center;}
+input[type="submit"]:hover{
+    background: #3d3938;
+    cursor: pointer;
+}
+a{
+    color: #545454;
+    display: block;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.container {
+    background: black;
+    padding: 15px;
+    position: relative;
+}
+
+.content {
+    height: 500px;
+}
+
+.content p {
+    color: white;
+    font-size:14px; 
+    text-align:left;
+}
+
+.start {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.action {
+    text-align: right;
+}
+
+.action > input[type="submit"] {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    border: 1px solid white;
+    background: black;
+    cursor: pointer;
+    padding: 15px 30px;
+    color: white;
+}
+
+.img-wrap {
+    height: auto;
+    width: 100%;
+    margin:0 auto;
+    display:block;
+}
+
+.log {
+    color: black;
+    position: absolute;
+    top: 0;
+    right: -370px;
+    width: 350px;
+}
