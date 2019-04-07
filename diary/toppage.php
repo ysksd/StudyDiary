@@ -110,24 +110,57 @@ if(!empty($_POST['signup'])) {
     }
 debag('新規登録処理終了<<<<<<<<<<<<<<<<<<<<');
 }
+
+// =====================
+// 画面処理
+// =====================
+$currentPageNum = (!empty($_GET['p'])) ? $_GET['p'] : 1;
+$category = (!empty($_GET['c_id'])) ? $_GET['c_id'] : '';
+if(!is_int($currentPageNum)) {
+    error_log('エラー：指定ページに不正な値が入りました。');
+    header("location:mypage.php");
+}
+$listSpan = 5;
+$currentMinNum = (($currentPageNum-1)*$listSpan);
+$dbProductData = getProductList($currentMinNum, $category);
+$dbCategoryData = getCategory();
+debag('画面処理終了<<<<<<<<<<<<<<<<<<<<<<');
 ?>
 <?php require('head.php'); ?>
 
 <!-- ヘッダー -->
 <?php require('header.php'); ?>
-<main class="site-width">
-    <div class="toppage-title">
-    <h1>StudyDiary</h1>
-    <p>これはエンジニアを目指す上で学んだ知識を<br class="br-sp">メモとして残しておくためのものとして作りました。</p>
-    <h2>使用した言語</h2>
-    <div class="toppage-flex">
-        <h3>HTML</h3>
-        <h3>CSS</h3>
-        <h3>javascript</h3>
-        <h3>jQuery</h3>
-        <h3>PHP</h3>
+
+<main>
+    <div class="site-width">
+        <div class="title">
+            <h1>MYPAGE</h1>
+        </div>
+        <div class="content-wrapper">
+            <div class="diary">
+                <h2 class="content-title"><i class="fas fa-book diary-icon"></i>最近の日記</h2>
+                <div class="product">
+                    <?php foreach($dbProductData['data'] as $key => $val): ?>
+                        <a href=detail.php<?php echo '?p_id='.$val['id']; ?>">
+                            <div class="panel-thum">
+                                <img src="<?php echo sanitize($val['pic']); ?>" alt="">
+                            </div>
+                            <div class="panel-text">
+                                <h3><?php echo sanitize($val['title']); ?></h3>
+                                <p><?php echo sanitize($val['comment']); ?></p>
+                            </div>
+                        </a>
+                    <?php endforeach;?>
+                </div>
+            </div>
+
+            <!-- サイドバー -->
+            <?php require('sidevar.php'); ?>
+        </div>
+    <!-- ページネーション -->
+    <?php pagination($currentPageNum, $dbProductData['total_page']); ?>
     </div>
-    </div>
+
 </main>
 
 <!-- ログインモーダル -->
@@ -141,13 +174,13 @@ debag('新規登録処理終了<<<<<<<<<<<<<<<<<<<<');
             <div class="msg-area">
                 <?php if(!empty($err_msg['common'])) echo $err_msg['common']; ?>
             </div>
-            <label>Email
+            <label>Email ~diary@gmail.com~
                 <input type="text" placeholder="Email" name="login_email" value="<?php if(!empty($_POST['login_email'])) echo $_POST['login_email']; ?>">
             </label>
             <div class="msg-area">
                 <?php if(!empty($err_msg['email'])) echo $err_msg['email']; ?>
             </div>
-            <label>パスワード
+            <label>パスワード  ~mydiary~
                 <input type="password" placeholder="パスワード" name="login_pass" value="<?php if(!empty($_POST['login_pass'])) echo $_POST['login_pass']; ?>">
             </label>
             <div class="msg-area">

@@ -19,7 +19,7 @@ debag('プロダクトデータ'.$p_id);
 debag('DBデータ：'.print_r($dbFormData, true));
 debag('カテゴリー：'.print_r($dbCategoryData, true));
 
-if(!empty($p_id) && empty($dbFormData)) {
+if(!empty($p_id)&& empty($dbFormData)) {
     debag('GETパラメータのプロダクトIDが合っていません。');
     header("location:mypage.php");
 }

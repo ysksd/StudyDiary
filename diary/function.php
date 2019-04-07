@@ -8,7 +8,7 @@ ini_set('error_log','php.log');
 // =================
 // デバッグ
 // =================
-$debag_flg = true;
+$debag_flg = false;
 function debag($str) {
     global $debag_flg;
     if(!empty($debag_flg)) {
@@ -195,6 +195,23 @@ function getProduct($u_id, $p_id) {
             return false;
         }
 
+    } catch(Exception $e) {
+        error_log('エラー発生：'.$e->getMessage());
+    }
+}
+
+function detailProduct($p_id) {
+    debag('詳細画面を表示します');
+    try {
+        $dbh = dbConnect();
+        $sql = 'SELECT * FROM product WHERE delete_flg = 0 AND id = :p_id';
+        $data = array(':p_id' => $p_id);
+        $stmt = queryPost($dbh, $sql, $data);
+        if($stmt) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }else{
+            return false;
+        }
     } catch(Exception $e) {
         error_log('エラー発生：'.$e->getMessage());
     }
