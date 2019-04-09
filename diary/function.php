@@ -8,7 +8,7 @@ ini_set('error_log','php.log');
 // =================
 // デバッグ
 // =================
-$debag_flg = false;
+$debag_flg = true;
 function debag($str) {
     global $debag_flg;
     if(!empty($debag_flg)) {
@@ -376,15 +376,15 @@ function pagination($currentPageNum, $totalPageNum, $link = '', $pageCulNum = 5)
     echo '<div class="pagination">';
         echo '<ul class="pagination-li">';
             if($currentPageNum != 1) {
-                echo '<li class="list-item"><a href="?p=1'.$link.'">&lt;</a></li>';
+                echo '<li class="list-item"><a href="mypage.php?p=1'.$link.'">&lt;</a></li>';
             }
             for($i = $minPageNum; $i <= $maxPageNum; $i++) {
                 echo '<li class="list-item ';
-                if($currentPageNum = $i){ echo 'active'; }
-                echo '"><a href="?p='.$i.$link.'">'.$i.'</a></li>';
+                if($currentPageNum == $i){ echo 'active'; }
+                echo '"><a href="mypage.php?p='.$i.$link.'">'.$i.'</a></li>';
             }
             if($currentPageNum != $maxPageNum && $maxPageNum > 1) {
-                echo '<li class="list-item"><a href="?p='.$maxPageNum.$link.'">&gt;</a></li>';
+                echo '<li class="list-item"><a href="mypage.php?p='.$maxPageNum.$link.'">&gt;</a></li>';
             }
         echo '</ul>';
     echo '</div>';
@@ -409,6 +409,19 @@ function isLike($u_id, $p_id) {
     } catch(Exception $e) {
         error_log('エラー発生：'.$e->getMessage());
 
+    }
+}
+
+function appendGetParam($arr_del_key = array()) {
+    if(!empty($_GET)) {
+    $str = '?';
+        foreach($_GET as $key => $val) {
+            if(!in_array($key, $arr_del_key, true)) {
+                $str .= $key.'='.$val.'&';
+            }
+        }
+    $str = mb_substr($str, 0, -1, "UTF-8");
+    return $str;
     }
 }
 

@@ -49,7 +49,7 @@ $categoryData = getCategory();
                     ドラッグ・ドロップ
                 </label>
             </div>
-            <a href="toppage.php">戻る</a>
+            <a href="toppage.php<?php echo appendGetParam(array('p_id')); ?>">&lt;戻る</a>
         </form>
     </div>
 </main>

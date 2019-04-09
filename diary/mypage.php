@@ -10,10 +10,6 @@ debagLogStart();
 // =====================
 $currentPageNum = (!empty($_GET['p'])) ? $_GET['p'] : 1;
 $category = (!empty($_GET['c_id'])) ? $_GET['c_id'] : '';
-if(!is_int($currentPageNum)) {
-    error_log('エラー：指定ページに不正な値が入りました。');
-    header("location:mypage.php");
-}
 $listSpan = 5;
 $currentMinNum = (($currentPageNum-1)*$listSpan);
 $dbProductData = getProductList($currentMinNum, $category);
@@ -35,7 +31,7 @@ debag('画面処理終了<<<<<<<<<<<<<<<<<<<<<<');
                 <h2 class="content-title"><i class="fas fa-book diary-icon"></i>最近の日記</h2>
                 <div class="product">
                     <?php foreach($dbProductData['data'] as $key => $val): ?>
-                        <a href="diary.php<?php echo '?p_id='.$val['id']; ?>">
+                        <a href="diary.php<?php echo (!empty(appendGetParam())) ? appendGetParam().'&p_id='.$val['id']: '?p_id='.$val['id']; ?>">
                             <div class="panel-thum">
                                 <img src="<?php echo sanitize($val['pic']); ?>" alt="">
                             </div>
