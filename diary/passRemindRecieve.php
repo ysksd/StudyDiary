@@ -54,6 +54,7 @@ if(!empty($_POST)) {
     debag('パスワード変更処理終了<<<<<<<<<<<<<<<<<<');
 }
 ?>
+<?php require('head.php'); ?>
 
 <!-- ヘッダー -->
 <?php require('header.php'); ?>

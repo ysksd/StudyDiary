@@ -62,6 +62,7 @@ EOT;
     }
 }
 ?>
+<?php require('head.php'); ?>
 
 <!-- ヘッダー -->
 <?php require('header.php'); ?>
