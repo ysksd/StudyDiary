@@ -41,7 +41,7 @@ if(!empty($_POST)) {
             if(!enpty($stmt)) {
                 debag('クエリ成功。パスワードを変更しました。');
                 session_unset();
-                header("location:toppage.php");
+                header("location:index.php");
             }else{
                 debag('クエリに失敗しました。');
                 $err_msg['common'] = MSG07;

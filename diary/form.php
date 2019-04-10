@@ -24,7 +24,7 @@ if(!empty($_POST)) {
         debag('バリデーションOKです。');
         debag('POST情報：'.print_r($_POST, true));
 
-        $from = 'info@gmail.com';
+        $from = 'info@ypsokrstd.com';
         $to = $email;
         sendMail($from, $to, $subject, $comment);
 

@@ -23,7 +23,7 @@ if(!empty($_POST)) {
             session_destroy();
             debag('セッションの中身：'.print_r($_SESSION, true));
             debag('トップページに遷移します。');
-            header("location:toppage.php");
+            header("location:index.php");
         }else{
             debag('クエリに失敗しました。');
             $err_msg['common'] = MSG07;

@@ -25,23 +25,23 @@ if(!empty($_POST)) {
             debag('DBにユーザー情報がありました。');
             $auth_key = makeRandKey();
             $to = $email;
-            $from = 'info@gmail.com';
+            $from = 'info@ypsokrstd.com';
             $subject = 'StudyDiaryパスワード再発行';
             $comment = <<<EOT
 本メールアドレス宛にパスワード再発行のご依頼がありました。
 下記のURLにて認証キーをご入力頂くとパスワードが再発行されます。
 
-パスワード再発行認証キー入力ページ：http://localhost:8888/webservice_practice07/passRemindRecieve.php
+パスワード再発行認証キー入力ページ：https://ypsokrstd/passRemindRecieve.php
 認証キー：{$auth_key}
 ※認証キーの有効期限は30分となります
 
 認証キーを再発行されたい場合は下記ページより再度再発行をお願い致します。
-http://localhost:8888/webservice_practice07/passRemindSend.php
+https://ypsokrstd/passRemindSend.php
 
 ////////////////////////////////////////
-ウェブカツマーケットカスタマーセンター
-URL  http://webukatu.com/
-E-mail info@webukatu.com
+Study Diaryカスタマーセンター
+URL  https://ypsokrstd.com/
+E-mail info@ypsokrstd.com
 ////////////////////////////////////////
 EOT;
             sendMail($from, $to, $subject, $comment);

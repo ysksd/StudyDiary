@@ -141,9 +141,9 @@ function getErrMsg($key) {
 // ================
 // DB接続
 function dbConnect() {
-    $dsn = 'mysql:dbname=diary;host=localhost;charset=utf8';
-    $user = 'root';
-    $password = 'root';
+    $dsn = 'mysql:dbname=hazikaretako_ypsokrstd;host=mysql3015.xserver.jp;charset=utf8';
+    $user = 'hazikaretako_ysk';
+    $password = 'yY751421';
     $options = array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
