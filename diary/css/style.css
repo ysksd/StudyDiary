@@ -194,7 +194,12 @@ section {
 }
 
 .pagination {
-    text-align: center;
+    margin: 0 auto;
+}
+
+.pagination-li {
+    display: flex;
+    justify-content: center;
 }
 
 .list-item > a {
@@ -202,6 +207,7 @@ section {
     padding: 5px 15px;
     border: 1px solid #33cccc;;
     color: #33cccc;;
+    margin-right: 15px;
 }
 
 .list-item > a:hover {
