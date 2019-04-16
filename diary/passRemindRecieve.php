@@ -5,10 +5,6 @@ debag('パスワード再発行認証画面');
 debag('======================');
 debagLogStart();
 
-if(empty($_SESSION['auth_key'])) {
-    header("location:passRemindSend.php");
-}
-
 // ==========================
 // パスワード変更処理
 // ==========================
@@ -38,7 +34,7 @@ if(!empty($_POST)) {
             $data = array(':email' => $_SESSION['auth_email'], ':pass' => password_hash($pass, PASSWORD_DEFAULT));
             $stmt = queryPost($dbh, $sql, $data);
 
-            if(!enpty($stmt)) {
+            if(!empty($stmt)) {
                 debag('クエリ成功。パスワードを変更しました。');
                 session_unset();
                 header("location:index.php");

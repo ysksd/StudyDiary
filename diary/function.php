@@ -222,8 +222,8 @@ function detailProduct($p_id) {
 // ========================
 function sendMail($from, $to, $subject, $comment) {
     if(!empty($to) && !empty($subject) && !empty($comment)) {
-        mb_send_mail("japanese");
-        mb_internal_encoding("utf-8");
+        mb_language("japanese");
+        mb_internal_encoding("UTF-8");
 
         $result = mb_send_mail($to, $subject, $comment, "From:".$from);
         if($result) {
@@ -241,7 +241,7 @@ function sendMail($from, $to, $subject, $comment) {
 function makeRandKey($length = 8) {
     static $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     $str = '';
-    for($i = 0; $i > $length; $i++) {
+    for($i = 0; $i < $length; $i++) {
         $str .= $chars[mt_rand(0, 61)];
     }
     return $str;
